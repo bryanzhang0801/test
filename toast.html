@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>toast</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="global.import.css">
+    <link rel="stylesheet" href="qui_toast.import.css">
+    <style>
+        .mod_tit{margin: 20px;font-size: 18px;}
+        .btn_active{
+            position: relative;
+            display: block;
+            margin: 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            line-height: 2;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, .15);
+            background-color: #F8F8F8;}
+    </style>
+</head>
+<body>
+	<div class="wrap">
+        <h1 class="mod_tit">弹出式提示 toast</h1>
+
+        <a class="btn_active" id="btn_active_1" href="javascript:;">信息</a>
+        <a class="btn_active" id="btn_active_2" href="javascript:;">成功</a>
+        <a class="btn_active" id="btn_active_3" href="javascript:;">失败</a>
+
+        <div class="qui_toast" id="js_toast_1">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--info"></i>
+                    <h6 class="qui_toast__tit">已是最新版本</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="qui_toast" id="js_toast_2">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--success"></i>
+                    <h6 class="qui_toast__tit">下载完成</h6>
+                </div>
+            </div>
+        </div>        
+
+        <div class="qui_toast" id="js_toast_3">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--warn"></i>
+                    <h6 class="qui_toast__tit">操作失败</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="qui_toast">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--success"></i>
+                    <h6 class="qui_toast__tit">这文案有十个字这么长</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="qui_toast">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--success"></i>
+                    <h6 class="qui_toast__tit">这文案有十个字以上那就换行吧</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="qui_toast">
+            <div class="qui_toast__mask">
+                <div class="qui_toast__box">
+                    <i class="qui_toast__icon qui_toast__icon--success"></i>
+                    <h6 class="qui_toast__tit">这文案最多两行多出的文字不显示请注意控制字数</h6>
+                </div>
+            </div>
+        </div>                              
+        
+	</div>
+
+    <script>
+        var btn_1 = document.getElementById("btn_active_1"),
+            toast_1 = document.getElementById("js_toast_1"),
+            btn_2 = document.getElementById("btn_active_2"),
+            toast_2 = document.getElementById("js_toast_2"),
+            btn_3 = document.getElementById("btn_active_3"),
+            toast_3 = document.getElementById("js_toast_3");
+            btn_1.onclick = function(){
+                toast_1.classList.add("qui_toast--active");
+
+                // 1.35秒后去除激活态类名qui_toast--active
+                setTimeout(function(){
+                    toast_1.classList.remove("qui_toast--active");
+                }, 1350);
+            }
+            btn_2.onclick = function(){
+                toast_2.classList.add("qui_toast--active");
+
+                // 1.35秒后去除激活态类名qui_toast--active
+                setTimeout(function(){
+                    toast_2.classList.remove("qui_toast--active");
+                }, 1350);
+            }
+            btn_3.onclick = function(){
+                toast_3.classList.add("qui_toast--active");
+
+                // 1.35秒后去除激活态类名qui_toast--active
+                setTimeout(function(){
+                    toast_3.classList.remove("qui_toast--active");
+                }, 1350);
+            }                        
+    </script>
+
+
+</body>
+</html>
