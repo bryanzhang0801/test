@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*========================================================================
+      @作者：bryanzhang
+      @说明：toast模块样式
+      @最后编辑：$Author:: bryanzhang       $
+                 $Date:: 2017-08-14 15:01:30#$
+========================================================================*/
+.qui_toast{display:none;}
+.qui_toast__mask{position:fixed;top:0;left:0;bottom:0;right:0;z-index:1000;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;}
+.qui_toast__box{padding:20px 20px 16px;border-radius:5px;background:rgba(0,0,0,.8);opacity:0;-webkit-transform:scale(.7);}
+.qui_toast__tit{text-align:center;max-width:10em;min-width:6em;max-height:48px;overflow:hidden;line-height:1.5;word-wrap:break-word;font-size:16px;font-weight:300;color:#fff;}
+.qui_toast__icon{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-pack:center;-webkit-box-align:center;width:28px;height:28px;margin:0 auto 11px;color:#fff;border-radius:28px;border:solid 2px;}
+.qui_toast__icon::before,
+.qui_toast__icon::after{content:"";display:block;background:currentColor;}
+/*信息和警告*/
+.qui_toast__icon--warn{color:#FD7072;}
+.qui_toast__icon--info::before,
+.qui_toast__icon--warn::after{width:2px;height:2px;border-radius:2px;margin:2px 0;-webkit-transform:scale(1.5);}
+.qui_toast__icon--warn::before,
+.qui_toast__icon--info::after{width:2px;height:10px;margin:1px 0;}
+/*成功*/
+.qui_toast__icon--success{position:relative;}
+.qui_toast__icon--success::before,
+.qui_toast__icon--success::after{position:absolute;-webkit-transform:rotate(-45deg);-webkit-transform-origin:0 100%;}
+.qui_toast__icon--success::before{top:13px;left:12px;width:2px;height:8px;}
+.qui_toast__icon--success::after{top:19px;left:12px;width:14px;height:2px;}
+/*激活态*/
+.qui_toast--active{display:block;}
+.qui_toast--active .qui_toast__box{
+	-webkit-animation:ani_toast_scaleOut 350ms cubic-bezier(.17,.89,.32,1.27) forwards,
+	                  ani_toast_scaleIn 200ms cubic-bezier(.4,.8,.74,1) 1150ms,
+	                  ani_toast_fadeIn 350ms cubic-bezier(.0,0,.2,1) forwards,
+	                  ani_toast_fadeOut 200ms cubic-bezier(.4,.8,.74,1) 1150ms;
+}
+@-webkit-keyframes ani_toast_scaleOut{
+	  0%{-webkit-transform:scale(.7);}
+	 72%{-webkit-transform:scale(1.03);}
+	100%{-webkit-transform:scale(1);}
+}
+@-webkit-keyframes ani_toast_scaleIn{
+	  0%{-webkit-transform:scale(1);}
+	100%{-webkit-transform:scale(.7);}
+}
+@-webkit-keyframes ani_toast_fadeIn{
+	  0%{opacity:0;}
+	100%{opacity:1;}
+}
+@-webkit-keyframes ani_toast_fadeOut{
+	  0%{opacity:1;}
+	100%{opacity:0;}
+}
