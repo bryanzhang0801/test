@@ -1,0 +1,28 @@
+@charset "utf-8";
+/*========================================================================
+      @作者：bryanzhang
+      @说明：公用样式
+      @最后编辑：$Author:: bryanzhang        $
+                 $Date:: 2017-07-27 17:26:40#$
+========================================================================*/
+html{
+  /*防止IOS屏幕横竖屏切换时文字大小产生变化*/
+  -webkit-text-size-adjust:100%;
+  /*禁用点击的高亮反馈*/
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/*禁止长按链接与图片弹出菜单*/
+a,img{-webkit-touch-callout:none;border:0;}
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td,figure{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:300;}
+li{list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+input:focus,textarea:focus,button:focus{outline:0;}
+a,a:hover{text-decoration:none;}
+/*解决字体和文字大小在控件中没有被继承的问题*/
+button,input,textarea,select{font-family:inherit;font-size:100%;font-weight:inherit;}
+body{font:300 12px/1.5 sans-serif;}
+
+.wrap{overflow:hidden;}
+
+
