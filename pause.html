@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn" style="font-size:200px">
+<head>
+	<meta charset="utf-8">
+	<title>测试</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no">
+    <style>
+        .bgmusic{position:absolute;top:.15rem;right:.15rem;z-index:10;}
+        .bgmusic__icon{display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;width:.27rem;height:.27rem;border:solid 1px red;border-radius:100%;}
+        .rotate{-webkit-animation:ani_rotate 2s linear infinite;}
+        .bgmusic__icon.pause{-webkit-animation-name:none!important;}
+        @-webkit-keyframes ani_rotate{
+            0%{-webkit-transform:rotate(0);}
+          100%{-webkit-transform:rotate(360deg);}
+        }
+        .bgmusic__icon::before{content:"";display:block;width:.07rem;height:.07rem;border:solid red;border-width:0 1px 1px 0;-webkit-transform:rotate(-45deg);-webkit-transform-origin:center;opacity:.6;}
+        
+    </style>
+</head>
+<body class="">
+
+    <div id="bm" class="bgmusic">
+      <i id="bm_icon" class="bgmusic__icon rotate"></i> 
+    </div> 
+
+    <script>
+        var isPlaying = true;
+
+        var cBgm = document.querySelector('.bgmusic');
+        var iBgm = document.querySelector('.bgmusic__icon');
+
+        iBgm.addEventListener('click', function() {
+          isPlaying ? pause() : play();
+        });
+
+        function pause() {
+          isPlaying = false;
+          var iTransform = getComputedStyle(iBgm).transform;
+          var cTransform = getComputedStyle(cBgm).transform;
+          cBgm.style.transform = cTransform === 'none' ? iTransform : iTransform.concat(' ', cTransform);
+          iBgm.classList.remove('rotate');
+        }
+
+        function play() {
+          isPlaying = true;
+          iBgm.classList.add('rotate');
+        }
+    </script>
+
+</body>
+</html>
