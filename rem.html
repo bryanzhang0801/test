@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>rem</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="global.import.css">
+    <link rel="stylesheet" href="rem.css">
+    <!-- 计算rem的基准值，必须放到head标签里 -->
+    <script>
+        (function (win,doc,flag){
+            var resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+                docEl = doc.documentElement;
+            function setFont(){
+                switch(flag){
+                    case 'height':
+                        var flagValue = win.innerHeight||667,
+                            fontSize = 100*(flagValue/667);
+                        if (fontSize < 70) {fontSize = 70;}
+                        docEl.style.fontSize = fontSize + 'px';
+                        break;
+                    default:
+                        var flagValue = win.innerWidth||375,
+                            fontSize = 100*(flagValue/375);
+                        if (fontSize < 85) {fontSize = 85;}
+                        if (fontSize > 195) {fontSize = 100;}
+                        docEl.style.fontSize = fontSize + 'px';
+                }                 
+            }  
+            win.addEventListener(resizeEvt, setFont, false);
+            setFont();
+        })(window,document,'width'); 
+    </script>  
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <p class="text">文字</p>
+
+</body>
+</html>
