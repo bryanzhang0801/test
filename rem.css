@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "rem_width.import.css";
+@import "rem_height.import.css";
 
 .box{width:1.23rem;height:1rem;background:#000;}
 
