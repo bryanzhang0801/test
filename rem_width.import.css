@@ -5,4 +5,7 @@
       @最后编辑：$Author:: bryanzhang       $
                  $Date:: 2018-02-09 14:26:30#$
 ========================================================================*/
-html{font-size:100px;font-size:26.666666vw!important;} 
+html{font-size:100px;font-size:26.6666667vw!important;}
+@media (min-width:768px){
+	html{font-size:100px!important;}
+}
