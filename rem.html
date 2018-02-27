@@ -12,21 +12,22 @@
         (function (win,doc,flag){
             var resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
                 docEl = doc.documentElement;
+            docEl.style = 'width:100vw';
+            alert(docEl.style.width);
+            if (docEl.style.width.match('vw')) return true;
             function setFont(){
                 switch(flag){
                     case 'height':
-                        var flagValue = docEl.clientHeight||667,
-                            fontSize = 100*(flagValue/667);
-                        if (fontSize < 70) {fontSize = 70;}
-                        docEl.style.fontSize = fontSize + 'px';
+                        var flagValue = Math.max(docEl.clientHeight, win.innerHeight),
+                            fontSize = 100*(flagValue/667)||100;                        
                         break;
                     default:
-                        var flagValue = docEl.clientWidth||375,
-                            fontSize = 100*(flagValue/375);
-                        if (fontSize < 85) {fontSize = 85;}
-                        if (fontSize > 195) {fontSize = 100;}
-                        docEl.style.fontSize = fontSize + 'px';
-                }                 
+                        var flagValue = Math.max(docEl.clientWidth, win.innerWidth),
+                            fontSize = 100*(flagValue/375)||100;
+                }
+                if (fontSize < 60) fontSize = 60;
+                if (fontSize > 120) fontSize = 120;
+                docEl.style.fontSize = fontSize + 'px';                
             }  
             win.addEventListener(resizeEvt, setFont, false);
             setFont();
