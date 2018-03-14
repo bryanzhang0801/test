@@ -13,7 +13,6 @@
             var resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
                 docEl = doc.documentElement;
             docEl.style = 'width:100vw';
-            alert(docEl.style.width);
             if (docEl.style.width.match('vw')) return true;
             function setFont(){
                 switch(flag){
