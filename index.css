@@ -2,119 +2,8 @@
 @import "global.import.css";
 
 html{font-size:100px;}
-body{color:#8d644d;background:#f8f1e6;}
 
-html,body{height:100%;}
-a{color:#8d644d;}
-
-.hide{position:absolute;width:0;height:0;overflow:hidden;}
-
-.cover{ position: relative; width: 100%; height: 100%; overflow: hidden; background-color: #06060a; background-repeat: no-repeat;background-position:center top; background-size: cover; z-index: 999;}
-.logo_s{ position: absolute; top: 8px; left: 8px; background-repeat: no-repeat;background-position:center top; background-size: cover; background-image: url(img/logo_s_music.png); z-index: 999; width: 82px; height: 25px; }
-.cover .evn_num{ text-align: center; margin:45px 0 0 0; }
-.cover .evn_num em{ font-size: 28px; }
-.share_text{ position: absolute; right: 45px; top: 10px; height: 27px; line-height: 27px; white-space: nowrap; font-size: 14px; z-index: 99; color: rgba(255, 255, 255, 0.5); }
-.share_btn{  width: 23px; height: 23px; position: absolute; top:10px; right: 10px; border:2px solid #7e818e; border-radius: 999px; z-index: 9999; }
-.share_btn:after{ content: ""; display: block;background-image: url(base64/share_bg.png); background-repeat: no-repeat; background-size: cover; width: 14px; height: 14px; margin:4px 0 0 5px;}
-.cvd_tit{ background: url(img/cvtit_bg.png) repeat-y; background-size: 300px 1px; text-align: center; width: 300px; position: absolute; left: 50%; bottom:10px; margin-left: -150px;  height: 20px; line-height: 20px; color: #153957;}
-
-.wrap{position:relative;overflow:hidden;}
-.btn_brown{ background: #f4c64b; color: #584337; font-size: 20px; font-weight:400; height: 44px; display: inline-block; padding: 0 33px; text-align: center; line-height: 44px; border-radius:44px; }
-.btn_disable{ background: #dad8d8 ; color:#bcbcbc;}
-
-.spec_text{ color: #ecad44; font-size: 15px; margin-bottom: 5px;}
-.spec_text a{ color: rgba(255,255,255,.4); margin-left: 5px; }
-
-.cen_txt{ text-align: center;}
-.logo_title,
-.post_btn,
-.art_info,
-.mod_start{ position: absolute;z-index: 5;}
-
-.logo_title{top:10px;left:0;width:100%;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;}
-.logo{  background: url(img/logo.png) no-repeat; background-size: cover; width:60px; height: 60px; text-indent: -9999px; }
-.evn_num{ margin-left: 20px; font-size:15px; font-weight: 400; color: #6d4831; }
-.evn_num em{font-style:normal;}
-
-/*换页*/
-.slider_show{ position: relative;}
-.thumb-bg ul{display: block; overflow: hidden;}
-.thumb-bg li{ float: left; width: 100%; display: none;}
-.thumb-bg li:first-child{ display: block;}
-.thumb-bg img{display: block; width: 100%; height: auto; }
-.thumb-bg .left_hnd,
-.thumb-bg .right_hnd{  width: 40px; height: 40px; position: absolute; bottom: 10px; }
-.thumb-bg .left_hnd{  left:0; -webkit-transform:rotate(135deg); }
-.thumb-bg .right_hnd{  right: 0; -webkit-transform:rotate(-45deg); }
-.thumb-bg .left_hnd::before,
-.thumb-bg .left_hnd::after,
-.thumb-bg .right_hnd::before,
-.thumb-bg .right_hnd::after{content:"";position:absolute;background:#d78a12;}
-.thumb-bg .left_hnd::before,
-.thumb-bg .right_hnd::before{top:7px;right:12px;width:3px;height:23px;}
-.thumb-bg .right_hnd::after,
-.thumb-bg .left_hnd::after{bottom:10px;left:5px;width:20px;height:3px;}
-
-.mod_title_s{position:relative;line-height: 40px;}
-.mod_title_s h2{ text-align: left; font-weight: normal; font-size:14px; }
-.my_award{position:absolute;top:0;right:0;height:40px;line-height:40px;}
-
-.art_info{ left: 10px; top: 50%; margin-top: -30px; }
-.art_info .name{ font-size: 16px; display: block; margin-bottom: 5px; font-weight:400; color: #6d4831;} 
-.art_info .audio_hnd{display:-webkit-box; -webkit-box-align:center; height:30px; min-width: 120px; padding-right: 30px; line-height: 30px; color: #6d4831; background-image:-webkit-linear-gradient(left,rgba(215, 138, 18, .3),rgba(0, 0, 0, 0)); }
-.art_info .audio_hnd .mis_icon{display:block; width: 15px; height: 15px; margin-right: 5px; margin-left: 5px; background: url(img/sprite_play.png) no-repeat 0 0 / 15px }
-.art_info .audio_hnd .pause{ background-position: 0 -15px;}
-.post_btn{ bottom: -20px; left: 50%; margin-left:-75px; width: 150px; height: 40px; line-height: 40px; text-align: center; color: #fff; font-weight: 400; font-size: 23px; letter-spacing:3px; border-radius: 20px; background: #d78a12; }
-
-.histogram_data{ padding-top: 70px; border-bottom: solid #8d644d 1px;}
-.histogram_data .graph{ position: relative; height: 100%; -webkit-box-flex:1;
-    -webkit-flex:1 1 auto; float: left; text-align: center; color: #ccc1b2; }
-.histogram_data .his_loc{ height: 60px; position: relative;display:-webkit-box;display:box;-webkit-box-align:center;  }
-
-.histogram_data .graph .g_name,
-.histogram_data .graph .sup_perc{ display: block;line-height: 12px;position: absolute; left: -50%; width: 200%; text-align: center; white-space: nowrap;}
-.histogram_data .graph .g_name{top: -26px; }
-.histogram_data .graph .sup_perc{top: -14px;}
-.histogram_data .graph .graph_bar{ position: absolute; bottom: 0;width: 100%;}
-.histogram_data .graph .graph_bar .bar_box{ background: #ccc1b2; width: 20px; display: block; height: 100%; margin:0 auto; position: relative;}
-.histogram_data .graph.current{color: #8d644d; }
-.histogram_data .graph.current .graph_bar .bar_box{ background: #8d644d;}
-
-.share_mbox{ background: rgba(205, 149, 111, .2); overflow: hidden; padding: 0 15px; height: 46px; line-height: 46px; position: relative; font-size: 13px;}
-.share_mbox .imshare_btn{  height: 25px; line-height: 25px; background: #f4c64b; color: #584337; border-radius:25px; display: inline-block; position: absolute; right: 15px; top: 10px; padding: 0 15px;font-size: 14px;}
-
-.last_news{ width: 100%; padding: 0 10px;  margin-bottom:20px; -webkit-box-sizing: border-box;height: 24px; line-height: 24px;}
-.last_news .news_box{ width: 100%;overflow: hidden; height: 100%;   position: relative;}
-.last_news .news_contain{ position: absolute; left: 0; top: 0;}
-.last_news .news_contain p{ -webkit-box-sizing:border-box; width:50%; overflow:hidden ;white-space: nowrap; text-overflow:ellipsis; padding-right:20px; float: left; }
-
-.awd_pic{ margin:0 auto;width:174px;height:156px;}
-.awd_pic img{ display: block; width: 100%; }
-.mod_ctext{ text-align: center; line-height: 30px;}
-
-.week_award{ margin:0 15px;}
-.week_award ul{overflow:hidden;}
-.week_award li{ width: 33.33333%;-webkit-box-sizing: border-box; margin-bottom: 20px;float: left; overflow:hidden; }
-.week_award li:nth-of-type(3n){ margin-right: 0; }
-.week_award li img{ display: block; width: 80%; margin:0 auto 5px;}
-.week_award li .aw_inf{width: 80%; margin:0 auto; text-align: center; white-space:nowrap; overflow: hidden; text-overflow: ellipsis;}
-
-.event_rule{ margin-top: 30px; }
-.rule_area{ margin:15px; background: rgba(204, 193, 178, .6); padding: 10px;}
-.rule_area h2{ font-weight: 400; font-size: 20px; text-align: center; margin:5px 0 10px; }
-.rule_area p{position:relative; margin-bottom: 10px; padding-left:25px; word-break: break-all; }
-.rule_number{position:absolute;top:0;left:0;width:18px;height:18px;line-height:18px;text-align:center;border-radius:100%;color:#fff;background:#f4c64b;}
-.pt_review{ margin:0 15px 10px; text-align: center; }
-.pt_review .er_link{ line-height: 35px; font-size: 15px; display: inline-block; }
-
-.ad_box{ position: relative;}
-.ad_box img{ display: block; width: 100%; height: auto; }
-.ad_box_last{ margin-bottom: 30px;}
-.ad_box_p{ margin-bottom:15px; margin-top: 10px; }
-
-.qui_dialog__box{margin-top:-.8rem;max-height:none!important;border-radius:0!important;}
-
-.dialog_share{width:375px;height:544px;background:#fff;}
+.dialog_share{position:absolute;top:0;left:0;width:375px;height:544px;background:#fff;}
 .dialog_share__media{position:relative;}
 .dialog_share__media::after{content:"";display:block;padding-top:125%;}
 .dialog_share__img{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;}
@@ -151,10 +40,6 @@ a{color:#8d644d;}
 .canvas .chat__avatar_img{border-radius:64px;}
 .canvas .dialog_share__qrcode{display:block;width:110px;height:110px;}
 
-@media (max-width:320px) {
-	.dialog_share__media{}
-	.qui_dialog__close{bottom:-64px;}
-}
 
 
 
