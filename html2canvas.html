@@ -9,13 +9,39 @@
 </head>
 <body>
           
-    <div class="dialog_share" id="capture">
+    <div class="dialog_share canvas" id="capture">
+        <div class="dialog_share__media">
             <img class="dialog_share__img" src="share_cover.jpg" alt="" />
 
+            <ul class="chat">
+                <li class="chat__item reverse">
+                    <div class="chat__avatar">
+                        <img class="chat__avatar_img" src="avatar1.jpg" alt="">
+                    </div>
+                    <div class="chat__bd">
+                        <p class="chat__para"><span class="chat__name">张韶涵</span>谢谢你支持我。</p>
+                    </div>
+                </li>                        
+                <li class="chat__item">
+                    <div class="chat__avatar">
+                        <img class="chat__avatar_img" src="avatar2.jpg" alt="">
+                    </div>
+                    <div class="chat__bd">
+                        <p class="chat__para"><span class="chat__name">飞翔的鹅</span>千万涵粉永相随,来和我支持张韶涵当歌王。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="dialog_share__ft">
+            <div class="dialog_share__bd">
+                <h6 class="dialog_share__tit">原来TA就是你心中的歌王</h6>
+                <p class="dialog_share__desc">猜歌王 赢大礼 领取你的歌王属性</p>
+            </div>
+            <img class="dialog_share__qrcode" src="qrcode.jpg" alt="" />
         </div>
     </div>
 
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="html2canvas.min.js"></script>
 
     <script>
         var target = document.getElementById("capture");
