@@ -113,6 +113,8 @@ a{color:#8d644d;}
 .ad_box_p{ margin-bottom:15px; margin-top: 10px; }
 
 .qui_dialog__box{margin-top:-.8rem;max-height:none!important;border-radius:0!important;}
+
+.dialog_share{width:375px;height:544px;background:#fff;}
 .dialog_share__media{position:relative;}
 .dialog_share__media::after{content:"";display:block;padding-top:125%;}
 .dialog_share__img{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;}
@@ -135,7 +137,7 @@ a{color:#8d644d;}
 .reverse .chat__bd::after{left:auto;right:-16px;border-color:transparent transparent transparent rgba(255,255,255,.3);}
 .dialog_share__qrcode{display:block;width:55px;height:55px;}
 
-.canvas{width:750px;background:#fff;}
+.canvas{width:750px;height:1088px;}
 .canvas .dialog_share__ft{height:110px;padding:20px 40px;}
 .canvas .dialog_share__tit{font-size:32px;}
 .canvas .dialog_share__desc{font-size:28px;}
