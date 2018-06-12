@@ -64,21 +64,3 @@ body{color:#fff;background:#fff;}
 .preview__svg{display:block;width:100%;height:100%;}
 
 .img_box{position:absolute;top:0;left:0;width:0;height:0;overflow:hidden;}
-
-                        <li class="default_color_list__item" data-hex="5526c2,f8ed45">
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#5526c2"></span>
-                            </div>
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#f8ed45"></span>
-                            </div>
-                        </li>
-
-                                                <li class="default_color_list__item" data-hex="9D0C84,91B6C9">
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#9D0C84"></span>
-                            </div>
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#91B6C9"></span>
-                            </div>
-                        </li>
