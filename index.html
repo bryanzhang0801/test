@@ -31,18 +31,34 @@
                 <li class="step_list__item">                           
                     <div class="upload_pic">
                         <a class="upload_pic__btn mod_btn" href="javascript:;">选择图片</a>
-                        <input class="upload_pic__file" type="file" name="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" />
+                        <input class="upload_pic__file" id="js_upload" type="file" name="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" />
                     </div>
                 </li> 
                 <li class="step_list__item">
                     <h2 class="step_list__tit">默认配色</h2>
                     <ul class="default_color_list">
-                        <li class="default_color_list__item" data-hex="6736dd,10c5f8">
+                        <li class="default_color_list__item" data-hex="00007E,6AFF7F">
                             <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#10c5f8"></span>
+                                <span class="default_color_list__value" style="background-color:#00007E"></span>
                             </div>
                             <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#6736dd"></span>
+                                <span class="default_color_list__value" style="background-color:#6AFF7F"></span>
+                            </div>
+                        </li>
+                        <li class="default_color_list__item" data-hex="4222f1,9eefe1">
+                            <div class="default_color_list__cut">
+                                <span class="default_color_list__value" style="background-color:#4222f1"></span>
+                            </div>
+                            <div class="default_color_list__cut">
+                                <span class="default_color_list__value" style="background-color:#9eefe1"></span>
+                            </div>
+                        </li>                        
+                        <li class="default_color_list__item" data-hex="ed3ea4,fec76c">
+                            <div class="default_color_list__cut">
+                                <span class="default_color_list__value" style="background-color:#ed3ea4"></span>
+                            </div>
+                            <div class="default_color_list__cut">
+                                <span class="default_color_list__value" style="background-color:#fec76c"></span>
                             </div>
                         </li>
                         <li class="default_color_list__item" data-hex="110945,ee184c">
@@ -53,14 +69,6 @@
                                 <span class="default_color_list__value" style="background-color:#ee184c"></span>
                             </div>
                         </li>                        
-                        <li class="default_color_list__item" data-hex="5526c2,f8ed45">
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#5526c2"></span>
-                            </div>
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#f8ed45"></span>
-                            </div>
-                        </li>
                         <li class="default_color_list__item" data-hex="3d3f4c,26b7a0">
                             <div class="default_color_list__cut">
                                 <span class="default_color_list__value" style="background-color:#3d3f4c"></span>
@@ -93,41 +101,40 @@
                                 <span class="default_color_list__value" style="background-color:#84f0d0"></span>
                             </div>
                         </li>
-                        <li class="default_color_list__item" data-hex="006450,ffcdd3">
+                        <li class="default_color_list__item" data-hex="5526c2,f8ed45">
                             <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#006450"></span>
+                                <span class="default_color_list__value" style="background-color:#5526c2"></span>
                             </div>
                             <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#ffcdd3"></span>
-                            </div>
-                        </li>
-                        <li class="default_color_list__item" data-hex="162253,FB3B1E">
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#162253"></span>
-                            </div>
-                            <div class="default_color_list__cut">
-                                <span class="default_color_list__value" style="background-color:#FB3B1E"></span>
+                                <span class="default_color_list__value" style="background-color:#f8ed45"></span>
                             </div>
                         </li>                                      
                     </ul>
-                    
+                </li>    
+                <li class="step_list__item">                        
                     <div class="select_color">
                         <h2 class="step_list__tit">自定义配色</h2>
                         <div class="select_color__item">
-                            <span class="select_color__value front_color" style="background-color:#6736dd;">#6736dd</span>
-                            <div class="color_picker">
-                                <canvas class="color_picker__canvas" id="js_cp_canvas" width="300" height="156"></canvas>
+                            <span class="select_color__value" id="front_color" style=""></span>
+                            <div class="color_picker" id="js_cp">
+                                <div class="color_picker__bd">
+                                    <canvas class="color_picker__canvas" width="300" height="156"></canvas>
+                                    <i class="color_picker__circle"></i>
+                                </div>
                                 <div class="color_picker__hue">
-                                    <input class="color_picker__range" id="js_cp_range" type="range" min="0" max="359" value="0" />
+                                    <i class="color_picker__hue_circle"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="select_color__item">
-                            <span class="select_color__value back_color" style="background-color:#10c5f8;">#10c5f8</span>
-                            <div class="color_picker">
-                                <canvas class="color_picker__canvas" id="js_cp_canvas2" width="300" height="156"></canvas>
+                            <span class="select_color__value" id="back_color" style=""></span>
+                            <div class="color_picker" id="js_cp2">
+                                <div class="color_picker__bd">
+                                    <canvas class="color_picker__canvas" width="300" height="156"></canvas>
+                                    <i class="color_picker__circle"></i>
+                                </div>
                                 <div class="color_picker__hue">
-                                    <input class="color_picker__range" id="js_cp_range2" type="range" min="0" max="359" value="0" />
+                                    <i class="color_picker__hue_circle"></i>
                                 </div>
                             </div>
                         </div>
@@ -147,8 +154,11 @@
                         <li class="size_list__item">
                             <label><input class="size_list__checkbox" type="checkbox" name="">150x150</label>
                         </li>                                                                       
-                    </ul>                    
-                    <a class="mod_btn btn_download" href="javascript:;">下载图片</a>                     
+                    </ul>
+
+                    <div class="box_download">                  
+                        <a class="mod_btn btn_download" href="javascript:;">下载图片</a>
+                    </div>                     
                 </li>         
             </ol>
         </section>
@@ -156,22 +166,22 @@
         <section class="main">
 
             <div class="preview">
-                <svg class="preview__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <filter class="svg_filter" id="duotone_6736dd10c5f8">
-                            <feColorMatrix type="matrix" result="gray"
-                                values="1 0 0 0 0
-                                        1 0 0 0 0
-                                        1 0 0 0 0
-                                        0 0 0 1 0" >
-                            </feColorMatrix>
-                            <feComponentTransfer color-interpolation-filters="sRGB" result="duotone"> 
-                                <feFuncR class="duotone_filter_value" type="table" tableValues="0.403921568627451 0.06274509803921569"></feFuncR>
-                                <feFuncG class="duotone_filter_value" type="table" tableValues="0.21176470588235294 0.7725490196078432"></feFuncG>
-                                <feFuncB class="duotone_filter_value" type="table" tableValues="0.8666666666666667 0.9725490196078431"></feFuncB>
-                                <feFuncA type="table" tableValues="0 1"></feFuncA>
-                            </feComponentTransfer> 
-                        </filter>                   
-                    <image class="preview__img"  x="0" y="0" width="100%" height="100%" xlink:href="preview3.jpg" filter="url(#duotone_6736dd10c5f8)"></image>
+                <svg class="preview__svg" id="preview_cont" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <filter class="svg_filter" id="duotone_6736dd10c5f8">
+                        <feColorMatrix type="matrix" result="gray"
+                            values="1 0 0 0 0
+                                    1 0 0 0 0
+                                    1 0 0 0 0
+                                    0 0 0 1 0" >
+                        </feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB" result="duotone"> 
+                            <feFuncR id="funcR" type="table" tableValues=""></feFuncR>
+                            <feFuncG id="funcG" type="table" tableValues=""></feFuncG>
+                            <feFuncB id="funcB" type="table" tableValues=""></feFuncB>
+                            <feFuncA type="table" tableValues="0 1"></feFuncA>
+                        </feComponentTransfer> 
+                    </filter>                   
+                    <image id="preview_img"  x="0" y="0" width="100%" height="100%" xlink:href="preview3.jpg" filter="url(#duotone_6736dd10c5f8)"></image>
                 </svg>
             </div>                 
 
@@ -179,57 +189,92 @@
 
     </article>
 
-    <div class="img_box"></div>
+    <div id="img_box"></div>
 
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/tinycolor/1.4.1/tinycolor.js"></script>
-    <!-- <script src="js/tinycolor.js"></script> -->
 
     <script>       
-        var uploadFile = document.querySelector('.upload_pic__file'),
-            btnDownload = document.querySelector('.btn_download'),
-            previewSvg = document.querySelector('.preview__svg'),
-            previewImg = document.querySelector('.preview__img'),
-            img_box = document.querySelector('.img_box'),
-            frontColor = document.querySelector('.front_color'),//前景色
-            backColor = document.querySelector('.back_color'),  //背景色
-            currentFrontColor = '6736dd',//当前的前景色
-            currentBackColor = '10c5f8'; //当前的背景色
+        var fileName,//文件名
+            fileType,//文件类型
+            fileSize,//文件大小
+            originWidth, //图片原始宽度
+            originHeight,//图片原始高度
+            currentFrontColor,//当前的前景色
+            currentBackColor; //当前的背景色 
 
-                   
-        uploadFile.addEventListener('change', function(){
+        // 初始化
+        $(function(){  
+            var initHexes = $('.default_color_list__item')[0].dataset.hex;
+            var initHex = initHexes.split(',');
+            currentFrontColor = initHex[0];
+            currentBackColor = initHex[1];
+            changeItemColor($('#front_color'), initHex[0]);
+            changeItemColor($('#back_color'), initHex[1]);
+            
+            setSvgFilter(initHexes);
+
+            var cp = new colorPicker('js_cp', initHex[0]);
+            var cp2 = new colorPicker('js_cp2' ,initHex[1]); 
+        }); 
+
+        $('#js_upload').change(function(e){
             //获取图片资源
-            var file = this.files[0]; 
+            var file = e.target.files[0]; 
             fileName = file.name;//文件名
             fileType = file.type;//文件类型
             fileSize = file.size;//文件大小
-           
-            reader = new FileReader();
 
-            reader.onload = function() {
+            var reader = new FileReader();
+
+            reader.onload = function(){
                 var image = new Image();
                 image.src = this.result;
                 image.onload = function(){
                     originWidth = this.width;
                     originHeight = this.height;
-                    saveSvgToImage(previewSvg, originWidth, originHeight, fileType); 
+                    saveSvgToImage($('#preview_cont'), this.width, this.height, fileType); 
                 }
-                setSvgImage(previewImg, this.result);
+                // 上传图片后设置svg预览图片
+                $('#preview_img')[0].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.result);
             }
 
             // 读取文件
             reader.readAsDataURL(file);
         });
 
-        // 上传图片后设置svg预览图片
-        function setSvgImage(svg, dataUri){
-            svg.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', dataUri);
-        }        
+        //设置滤镜
+        function setSvgFilter(hexes) {
+            var hex = hexes.split(',');
+            var color1 = tinycolor(hex[0]).toRgb();
+            var color2 = tinycolor(hex[1]).toRgb();
+            
+            var c1   = {};
+            c1.r   = color1.r / 255;
+            c1.g = color1.g / 255;
+            c1.b  = color1.b / 255;
+            
+            var c2   = {};
+            c2.r  = color2.r / 255;
+            c2.g = color2.g / 255;
+            c2.b  = color2.b / 255;
+            
+            $('#funcR').attr('tableValues', c1.r + ' ' + c2.r);
+            $('#funcG').attr('tableValues', c1.g + ' ' + c2.g);
+            $('#funcB').attr('tableValues', c1.b + ' ' + c2.b);
+
+            $('.svg_filter').attr('id', 'duotone_' + hex[0] + hex[1]);
+            $('#preview_img').attr('filter', 'url(#duotone_' + hex[0] + hex[1] + ')');
+
+        };               
 
         // svg生成图片
-        function saveSvgToImage(svg, width, height, type){
-            var svgCon = svg.outerHTML;  
+        function saveSvgToImage(target, width, height, type){
+            if(target == undefined) return;
+            var svgCon = target.prop("outerHTML"); 
             //svg转base64             
             var svgDataUri = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(svgCon)));
+
             var svgImage = new Image();
             svgImage.src = svgDataUri;
 
@@ -251,165 +296,176 @@
                 //添加图片
                 var img = document.createElement('img');
                 img.src = imgDataUri;
-                img_box.innerHTML = '';
-                img_box.appendChild(img);
+                $('#img_box').html('').append(img);
 
-                btnDownload.href = imgDataUri;
-                btnDownload.download = 'duotone_' + currentFrontColor + '_' + currentBackColor + '_' + fileName;
+                $('.btn_download').attr({'href':imgDataUri, 'download':'duotone_' + currentFrontColor + '_' + currentBackColor + '_' + fileName});
             }
-        }             
+        };            
 
-        //设置滤镜
-        function setSvgFilter(hexes) {
-            var duotoneFilterValue = document.querySelectorAll('.duotone_filter_value');
-            var svgFilter = document.querySelector('.svg_filter');
+        // 改变默认配色
+        $('.default_color_list__item').click(function(){
+            $('.default_color_list__item').removeClass('current');
+            $(this).addClass('current');
 
+            var hexes = $(this).attr('data-hex');
             var hex = hexes.split(',');
-            var color1 = tinycolor(hex[0]).toRgb();
-            var color2 = tinycolor(hex[1]).toRgb();
+            currentFrontColor = hex[0];
+            currentBackColor = hex[1];
+            changeItemColor($('#front_color'), hex[0]);
+            changeItemColor($('#back_color'), hex[1]);
+            var cp = new colorPicker('js_cp', hex[0]);
+            var cp2 = new colorPicker('js_cp2' ,hex[1]); 
             
-            var c1   = {};
-            c1.red   = color1.r / 255;
-            c1.green = color1.g / 255;
-            c1.blue  = color1.b / 255;
-            
-            var c2   = {};
-            c2.red   = color2.r / 255;
-            c2.green = color2.g / 255;
-            c2.blue  = color2.b / 255;
-            
-            duotoneFilterValue[0].setAttribute('tableValues', c1.red + ' ' + c2.red);
-            duotoneFilterValue[1].setAttribute('tableValues', c1.green + ' ' + c2.green);
-            duotoneFilterValue[2].setAttribute('tableValues', c1.blue + ' ' +  c2.blue);
+            setSvgFilter(hexes);
+            saveSvgToImage($('#preview_cont'), originWidth, originHeight, fileType);
+        });
 
-            svgFilter.setAttribute('id', 'duotone_' + hex[0] + hex[1]);
-            previewImg.setAttribute('filter', 'url(#duotone_' + hex[0] + hex[1] + ')');
 
-        }
-
-        // 改变默认颜色
-        function changeDefaultColor(){
-            var defaultColors = document.querySelectorAll('[data-hex]');//默认颜色值
-            defaultColors.forEach(function(item) {
-                item.addEventListener('click', function(){
-                    var hexes = this.dataset.hex;
-                    // updateCurrentColor(hexes);
-                    var hex = hexes.split(',');
-                    currentFrontColor = hex[0];
-                    currentBackColor = hex[1];
-                    changeItemColor(frontColor, hex[0]);
-                    changeItemColor(backColor, hex[1]);
-
-                    var color1 = tinycolor(hex[0]).saturate(100).toHsl();
-                    var color2 = tinycolor(hex[1]).saturate(100).toHsl();
-
-                    cpRange.value = color1.h;
-                    cpRange2.value = color2.h;
-                    drawCP(cpCtx, color1.h);
-                    drawCP(cpCtx2, color2.h);
-                    
-                    setSvgFilter(hexes);
-                    if(typeof originWidth === 'undefined') return;
-                    saveSvgToImage(previewSvg, originWidth, originHeight, fileType);
-                });
-            });
-        }
-
-        // 更新当前颜色
-        // function updateCurrentColor(hexes){
-        //     var currentColor = document.querySelector('[data-current-hex]');
-        //     currentColor.dataset.currentHex = hexes;
-        // }
-
-        // 改变单个颜色
+        // 改变自定义颜色
         function changeItemColor(item, hex){
-            item.innerHTML = '#' + hex;
-            item.setAttribute('style','background-color:#' + hex);
-        }     
+            var hex = tinycolor(hex).toHexString();
+            item.html(hex).css('background-color', hex);
+        };
+
+        $('#js_download').click(function(){
+            if($(this).attr('download') == null){
+                alert('请先上传图片');
+            } else {
+                
+            }                     
+        });           
     
         // 拾色器
-        var cpCanvas = document.getElementById("js_cp_canvas"),
-            cpCtx = cpCanvas.getContext("2d"),
-            cpRange = document.getElementById("js_cp_range"),
-            cpCanvas2 = document.getElementById("js_cp_canvas2"),
-            cpCtx2 = cpCanvas2.getContext("2d"),
-            cpRange2 = document.getElementById("js_cp_range2");
+        var colorPicker = function(id, hex){
+            this.element = $('#' + id);
+            this.cpCanvas = this.element.find(".color_picker__canvas");//取色区域的jq对象
+            this.domCanvas = this.cpCanvas[0];//取色区域的DOM对象
+            this.cpHue = this.element.find(".color_picker__hue");//色相区域
+            this.cpCircle = this.element.find(".color_picker__circle");//取色区域取色小圆点
+            this.cpHueCircle = this.element.find(".color_picker__hue_circle");//色相区域取色小圆点
+            this.width = this.domCanvas.width || 300;//取色区域的宽度
+            this.height = this.domCanvas.height || 156;//取色区域的高度
+            this.context = this.domCanvas.getContext("2d"); 
+            this.canvasX = 0;//取色区域相对于canvas画布水平位置
+            this.canvasY = 0;//取色区域相对于canvas画布垂直位置
+            this.hsl=[0,100,50];//初始化hsl
+            this.rgb=[255,0,0];//初始化rgb
+            this.hsv=[0,100,100];//初始化hsv
+            this.hex = hex || 'ffffff';//初始化hex
+            this._init();          
+            this._pickColor();//点击取色的函数
+            this._slideHue();//色相区域的函数
 
-        function drawCP(ctx, h){
-            var b = ctx.createLinearGradient(0, 0, ctx.canvas.width, 0);
-                b.addColorStop(0, "#fff");
-                b.addColorStop(1, "hsl(" + h + ", 100%, 50%)");
-                ctx.fillStyle = b;
-                ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                b = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);
-                b.addColorStop(0, "rgba(0,0,0,0)");
-                b.addColorStop(1, "#000");
-                ctx.fillStyle = b;
-                ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            }
-        function getColorByPos(ctx, x, y){
-            var b = ctx.getImageData(x, y, 1, 1).data;
-                return ("000000" + tinycolor({r:b[0], g:b[1], b:b[2]}).toHex()).slice(-6).toUpperCase();
-            }
-        function getMousePos(canvas, m){
-            var b = canvas.getBoundingClientRect();
-            return {x:m.clientX - b.left, y:m.clientY - b.top};
         }
 
-        cpRange.onchange = function(){
-            console.info(this.value);
-            drawCP(cpCtx, this.value);
-        }
+        colorPicker.prototype = {
+            _init:function(){
+                this._getPos();
+            },
 
-        cpRange2.onchange = function(){
-            drawCP(cpCtx2, this.value);
-        }        
+            //填充取色区域的渐变
+            _draw:function(color){
+                var x1 = 0;
+                var y1 = 0;
+                //水平的渐变
+                var linear_gradient_hori = this.context.createLinearGradient(x1, y1, this.width, 0);
+                linear_gradient_hori.addColorStop(0, 'rgba(255,255,255,1)'); 
+                linear_gradient_hori.addColorStop(1, color ? color:'rgba(255,0,0,1)');//添加上颜色
+                this.context.fillStyle = linear_gradient_hori;
+                this.context.fillRect(0, 0, this.width, this.height); 
+                //垂直的渐变
+                var linear_gradient_ver = this.context.createLinearGradient(x1, y1, 0, this.height);
+                linear_gradient_ver.addColorStop(0, 'rgba(0,0,0,0)'); 
+                linear_gradient_ver.addColorStop(1, 'rgba(0,0,0,1)');
+                this.context.fillStyle = linear_gradient_ver;
+                this.context.fillRect(0, 0, this.width, this.height); 
+            },
 
-        cpCanvas.onclick = function(m){
-            var mousePos = getMousePos(this, m);
-            var color = getColorByPos(cpCtx, mousePos.x, mousePos.y);
-            changeItemColor(frontColor, color);
-            var hexes = color + ',' + currentBackColor;
-            currentFrontColor = color;
+            //取色
+            _pickColor:function(){
+                var that = this;
+                var colorValue = that.element.prev();
+                that.cpCanvas.bind('mousedown', function(e){
+                    that._getColorXY(e);
+                    that._preview();
 
-            setSvgFilter(hexes);
-            if(typeof originWidth === 'undefined') return;
-            saveSvgToImage(previewSvg, originWidth, originHeight, fileType);
-        }
+                    that.cpCanvas.bind('mousemove', function(e){
+                        that._getColorXY(e);
+                        that._preview();
+                    });
+                });
 
-        cpCanvas2.onclick = function(m){
-            var mousePos = getMousePos(this, m);
-            var color = getColorByPos(cpCtx2, mousePos.x, mousePos.y);
-            changeItemColor(backColor, color);
-            var hexes = currentFrontColor + ',' + color;
-            currentBackColor = color;
+                that.cpCanvas.bind('mouseup', function(e){
+                    that.cpCanvas.unbind("mousemove");
+                    saveSvgToImage($('#preview_cont'), originWidth, originHeight, fileType);
+                });
+            },
 
-            setSvgFilter(hexes);
-            if(typeof originWidth === 'undefined') return;
-            saveSvgToImage(previewSvg, originWidth, originHeight, fileType);            
-        }
+            //通过坐标获取颜色
+            _getColorXY:function(e){
+                var canvasrect = this.domCanvas.getBoundingClientRect();
+                this.canvasX = e.clientX - canvasrect.left * (this.width / canvasrect.width);//获取点击的位置
+                this.canvasY = e.clientY - canvasrect.top * (this.height / canvasrect.height);
+                var imageData = this.context.getImageData(this.canvasX, this.canvasY, 1, 1);//用canvas的getImageData方法来获得该处的颜色
+                var pixel = imageData.data;
+                this.hex = tinycolor({r:pixel[0], g:pixel[1], b:pixel[2]}).toHex();
+                this.cpCircle.css({'top':this.canvasY - 8, 'left':this.canvasX - 8});//设置取色小圆圈的位置。-8是减去宽和边框的一半
+            },
 
-        window.onload = function(){       
-            btnDownload.addEventListener('click', function(e){
-                var downloadCon = this.getAttribute('download');
-                if(downloadCon == null){
-                    alert('请先上传图片');
-                } else {
-                    
-                }                     
-            });
+            // 改变色相
+            _slideHue:function(){
+                var that = this;
+                that.cpHue.bind('mousedown', function(e){
+                    that._getHueX(e);
+                    that._preview();
 
-            changeDefaultColor();
+                    that.cpHue.bind('mousemove', function(e){
+                        that._getHueX(e);
+                        that._preview();
+                    });
+                });
 
-            var initColor1 = tinycolor(currentFrontColor).saturate(100).toHsl();
-            var initColor2 = tinycolor(currentBackColor).saturate(100).toHsl();
+                that.cpHue.bind('mouseup', function(e){
+                    that.cpHue.unbind("mousemove");
+                    saveSvgToImage($('#preview_cont'), originWidth, originHeight, fileType);
+                });
+            },
 
-            cpRange.value = initColor1.h;
-            cpRange2.value = initColor2.h;
-            drawCP(cpCtx, initColor1.h);
-            drawCP(cpCtx2, initColor2.h);
+            //通过X轴坐标获取色相
+            _getHueX:function(e){
+                this.hsl[0] = Math.round(e.offsetX / this.width * 360);//在这里选择只是变化了h值
+                var hslString = 'hsla(' + this.hsl[0] + ',100%,50%,1' + ')';
+                this._draw(hslString);//重新绘制取色区域;
+                this.hex = tinycolor(hslString).toHex();
+                this.cpHueCircle.css({'left':e.offsetX - 8});//减去圆圈本身的宽和边框的一半
+            },
 
-        }                  
+            _preview:function(){
+                var colorValue = this.element.prev();
+                changeItemColor(colorValue, this.hex);
+                if(colorValue.attr('id') == 'front_color'){
+                    currentFrontColor = this.hex;
+                }else{
+                    currentBackColor = this.hex;
+                }
+                var hexes = currentFrontColor + ',' + currentBackColor;
+                setSvgFilter(hexes);
+            },
+
+            _getPos:function(){
+                this.hsl[0] = tinycolor(this.hex).toHsl().h;
+                var hslString = 'hsla(' + this.hsl[0] + ',100%,50%,1' + ')';
+                this._draw(hslString);//绘制取色渐变区域的函数 
+                var offestWidth = this.hsl[0] / 360 * this.width;
+                this.cpHueCircle.css({"left":offestWidth - 8});//改变颜色条选择圆圈的位置
+                // 根据hsb来确定渐变区域选色圆圈的位置
+                this.hsv = tinycolor(this.hex).toHsv();
+                var canvaswidth = this.hsv.s * this.width;
+                var canvasheight = (1 - this.hsv.v) * this.height;
+                this.cpCircle.css({'top':canvasheight - 8, 'left':canvaswidth - 8});
+            }                      
+
+        }          
               
     </script>
 </body>
